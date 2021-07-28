@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import booksRoute from "./routes/books.js";
+import usersRoute from "./routes/users.js";
 import dotenv from "dotenv";
 
 const app = express();      //initialising app
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
 
 app.use('/books', booksRoute);          //defining '/books' to be used for the route in booksRoute
+app.use('/users', usersRoute);          //defining '/books' to be used for the route in booksRoute
 
 //connecting to the mongodb atlas database
 const uri = process.env.CONNECTION_URL;         //fetching connection url from evironment vars
