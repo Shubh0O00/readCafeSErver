@@ -1,10 +1,10 @@
 import express from "express";
 
-import { getBooks, addBooks } from "../controllers/books.js";
+import { getBooks, addBooks } from "../controllers/books.js";       //importing getBooks and addBooks from controllers/book.js
 
-const router = express.Router();
+const router = express.Router();        //adding a router=> initiating a var router as a Router from express
 
-router.get('/', getBooks);
-router.post('/', addBooks);
+router.get('/', getBooks);          //if get request=> calls getBooks function
+router.post('/', addBooks);         //if post request=> calls addBooks function
 
-export default router;
+export default router;              //exporting router as default
