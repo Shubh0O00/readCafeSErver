@@ -7,7 +7,7 @@ import Book from "../models/books.js";
 //async as using await for Book.find() to get all the data from database before moving
 export const getBooks = async (req,res) =>{
     try {
-        const books = await Book.find();        //storing the array of jsons of docs from books
+        const books = await Book.find().skip(parseInt(req.params["pageLimit"])).limit(10);        //storing the array of jsons of docs from books
         res.status(200).json(books);            //status 200 is OK and then returning json(books)
     } catch (error) {                           //if there is an error while reading
         res.status(404).json({message: error.message});         //status 404 is not found and the returning the error message
