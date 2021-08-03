@@ -4,8 +4,9 @@ import mongoose from "mongoose";
 
 //creating a schema for user collection and regestering it
 const userSchema = mongoose.Schema({
-    name: String,
-    uniqueID: String,
+    name: String,           //users name
+    uniqueID: String,       //unique id to identify user passed by the frontend firebase authentication 
+    userId: String,         //userId chosen by the user=> also is unique and must be
     reviewedBooks:[String],
 });
 
